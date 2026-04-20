@@ -1,9 +1,18 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pickle
 from utils import transform_text
 
 app = FastAPI(title="Spam Detection API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Load model + vectorizer
 model = pickle.load(open("model/spam_model.pkl", "rb"))
