@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://spam-emial-fullstack-3.onrender.com/predict';
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const analyzeMessage = async (text) => {
   try {
