@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://127.0.0.1:8000';
+const API_URL = 'https://spam-emial-fullstack-3.onrender.com';
 
 export const analyzeMessage = async (text) => {
   try {
